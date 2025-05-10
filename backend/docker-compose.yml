@@ -1,6 +1,16 @@
 version: '3.8'
 
 services:
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    environment:
+      - MONGO_INITDB_DATABASE=mindmate
+    restart: unless-stopped
+
   qdrant:
     image: qdrant/qdrant:latest
     ports:
@@ -13,4 +23,5 @@ services:
     restart: unless-stopped
 
 volumes:
+  mongodb_data:
   qdrant_data: 
