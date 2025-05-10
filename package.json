@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@langchain/google-genai": "^0.2.7"
+  }
+}
